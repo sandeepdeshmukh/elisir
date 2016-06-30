@@ -3,9 +3,10 @@
 
 Run following commands
 
-tar -zxvf elixir.tgz 
+cd $HOME
+tar -zxvf <elixir.tgz path> 
 
-source ~/hadoop/elixir.sh
+source $HOME/hadoop/elixir.sh
 
 ssh-keygen
 
