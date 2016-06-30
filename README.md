@@ -1,5 +1,6 @@
-# Setting up Hadoop and other softwares for
-# Exixir Professional Services - Big Data and Hadoop trainign
+# Setting up Hadoop and other softwares for Exixir Professional Services - Big Data and Hadoop training
+
+Download the tar.gz file : [Tar Ball][https://drive.google.com/open?id=0B5BbiPqrIgf8MlJwaWxqQmJlaUE]
 
 Run following commands
 
