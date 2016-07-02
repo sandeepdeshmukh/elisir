@@ -6,7 +6,7 @@ Run following commands
 
 cd $HOME
 
-tar -zxvf <elixir.tgz path> 
+tar -zxvf \<elixir.tgz path\> 
 
 source $HOME/hadoop/elixir.sh
 
