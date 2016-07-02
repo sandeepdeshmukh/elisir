@@ -5,6 +5,7 @@ Download the tar.gz file : [Tar Ball][https://drive.google.com/open?id=0B5BbiPqr
 Run following commands
 
 cd $HOME
+
 tar -zxvf <elixir.tgz path> 
 
 source $HOME/hadoop/elixir.sh
