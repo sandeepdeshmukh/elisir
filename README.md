@@ -25,6 +25,31 @@ PATH=$PATH:$HADOOP_HOME/bin/:$HADOOP_HOME/sbin/:$HOME/hadoop/bin/
 Now setup the passwordless ssh for your login
 ```bash
 ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/elixir/.ssh/id_rsa): 
+Created directory '/home/elixir/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/elixir/.ssh/id_rsa.
+Your public key has been saved in /home/elixir/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:3JHop0oTKd3488b3TR6HAxUU8W1zav1QkGQL3KnD/wE elixir@1511250d0578
+The key's randomart image is:
++---[RSA 2048]----+
+|           ..+O= |
+|         . ..o+=.|
+|        . o. .o.*|
+|     . * . .+E =o|
+|    . = S o .o= .|
+|     . o o   o.+.|
+|      o +.    oo=|
+|     . o oo .  =+|
+|      .  ... .. o|
++----[SHA256]-----+
+```
+
+Last step in setting ssh key
+```bash
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
