@@ -1,17 +1,17 @@
 # Setting up Hadoop and other softwares for Elixir Professional Services - Big Data and Hadoop training
 
+Download the tar ball  https://drive.google.com/open?id=0B5BbiPqrIgf8QkRFUTk2cnl6eVk . By default it will be saved in Downloads directory.
 Run following commands
 
 ```bash
 cd $HOME # Takes you to your home directory
-wget https://drive.google.com/open?id=0B5BbiPqrIgf8QkRFUTk2cnl6eVk
-tar -zxvf \<hadoop.tgz path\> 
+tar -zxvf \<hadoop.tgz path - mostly ~/Downloads/hadoop.tgz\> 
 ```
 
 Edit your .bashrc file and add following lines at the end
 
 ```bash
-nano .bashrc
+gedit .bashrc
 ```
 
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
@@ -23,7 +23,7 @@ PATH=$PATH:$HADOOP_HOME/bin/:$HADOOP_HOME/sbin/:$HOME/hadoop/bin/
 Now go to the following hadoop configuration directory and replace elixir word with your login name.
 ```bash
 cd $HOME/hadoop/hadoop-2.7.2/etc/hadoop
- sed -i ~s/elixir/<YOUR_USER_NAME>/g
+ sed -i ~s/elixir/<YOUR_USER_NAME>/g *
 ```
 
 Now setup the passwordless ssh for your login
@@ -64,3 +64,5 @@ start-hadoop.sh
 hdfs dfs -mkdir -p input
 hdfs dfs -ls 
 ```
+If there is no error in the last command, and you see input directory as the output, congratulate yourself for setting up the Hadoop successfully.
+
