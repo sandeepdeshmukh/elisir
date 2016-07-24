@@ -7,13 +7,17 @@ Run following commands
 cd $HOME # Takes you to your home directory
 tar -zxvf \<hadoop.tgz path - mostly ~/Downloads/hadoop.tgz\> 
 ```
+Check Your JAVA_HOME path copy the latest one and use in next step 
+```bash
+ls /usr/lib/jvm/ | grep 0-openjdk
+```
 
 Edit your .bashrc file and add following lines at the end
 
 ```bash
 gedit .bashrc
 ```
-
+#use path that you copied in previous step 
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
 
 export HADOOP_HOME=$HOME/hadoop/hadoop-2.7.2/
@@ -27,6 +31,7 @@ cd $HOME/hadoop/hadoop-2.7.2/etc/hadoop
 ```
 
 Now setup the passwordless ssh for your login
+PRESS ENTER WHEN ASKED FOR PASSPHRASE (BLANK)
 ```bash
 ssh-keygen
 Generating public/private rsa key pair.
