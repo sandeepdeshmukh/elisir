@@ -4,7 +4,7 @@ Run following commands
 
 ```bash
 cd $HOME # Takes you to your home directory
-wget < file -link>
+wget https://drive.google.com/open?id=0B5BbiPqrIgf8QkRFUTk2cnl6eVk
 tar -zxvf \<hadoop.tgz path\> 
 ```
 
