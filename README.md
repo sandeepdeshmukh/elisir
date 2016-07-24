@@ -15,8 +15,11 @@ Edit your .bashrc file and add following lines at the end
 ```bash
 nano .bashrc
 ```
+
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
+
 export HADOOP_HOME=$HOME/hadoop/hadoop-2.7.2/
+
 PATH=$PATH:$HADOOP_HOME/bin/:$HADOOP_HOME/sbin/:$HOME/hadoop/bin/
 
 Now setup the passwordless ssh for your login
