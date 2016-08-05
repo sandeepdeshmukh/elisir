@@ -1,0 +1,70 @@
+
+=====================
+||Problem Statement||
+=====================
+Some important terms::
+    DNA : stores biological information
+    Genes : Functional unit made up of the DNA. (Humans have 20-25K genes)
+    Chromosome : Genes collectively form the chromosome (Humans have 25 chromosomes)
+    Genome: Chromosomes collectively form the human genome.
+
+Now, when sequencing of human genome is done, the genome is not sequenced from
+its start to its end in one stretch...., as it is not possible!! The process of 
+sequencing involves following steps:
+
+1. Chop the entire genome (all chormosomes) into fragments (each of about 50-500 in length)
+2. Perform sequencing of each of the fragment
+3. Once individual fragment is sequenced then map the fragments to a reference genome
+4. Find out the locations where each fragment maps (i.e. on which chromosome & at what position)
+5. Identify fragments which map to a single chromosome and save them together
+6. Create such files for all chromosomes so that those files can be processed by downstream algorithms
+7. The overall process is called as "MAPPING"
+
+We need to solve this problem of sequencing using Map-Reduce framework.
+
+INPUT:
+======
+A file containing random strings of length around 50.
+You can use below command to create the input file:
+
+for i in `seq 1 1000`; do echo $RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM | tr '[0-9]' 'ACGTACGTA' >> /tmp/random-strings.txt ; done
+
+
+You need to write below function in map:
+----------------------------------------
+Consider that each of the strings from the input file map to one of the 25 
+reference strings (chromosomes) and you get the exact mapping position from 
+a pre-defined function. The function returns a chromosome number and the 
+position at which the random string matches.
+e.g.
+Random String: ATCGCTAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGCTAGCTACGA
+Return value from function: (chr4, 7212)
+
+First value (CHROMOSOME) is within range: chr1 to chr25
+Second value (POSITION) is in the range: 1 to 999999
+
+Note that,
+FOR SIMPLICITY, currently, there is no relationship between random string 
+and the return value from the above function. Whatever the string is, return 
+value from function has no relation with it.
+
+
+FINAL OUTPUT:
+=============
+You need to create a file per CHROMOSOME:
+i.e. chr1.txt, chr2.txt, chr3.txt, ................., chr24.txt, chr25.txt
+
+Each file will contain the output in the format specified below. Note that,
+the per chromosome output is sorted by the POSITION value.
+
+chr1.txt:
+---------
+12      ATATCGATATCGCTAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGCT
+101     AGCTACGACGCTAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGCTAG
+1234    CTACGACATCGCTAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGCTA
+74593   GCTACGATAATCGCTAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGC
+...
+...
+234566  TAGCTACGAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGCTAGCTAC
+998877  GACGCTAGCTAGGCGGCTAGATAGATCGCTAGATCGCTAGCTAGCTACGA
+
